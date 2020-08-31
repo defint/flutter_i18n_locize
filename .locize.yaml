@@ -1,0 +1,10 @@
+assetsPath: "./assets/flutter_i18n"
+project:
+  id: "..."
+  apiKey: "..."
+  namespaces:
+    - "mobile"
+  languages:
+    - "en"
+    - "ru"
+  version: "latest"

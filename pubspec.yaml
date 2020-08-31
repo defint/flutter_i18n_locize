@@ -10,6 +10,7 @@ environment:
 
 dependencies:
   dio: "3.0.10"
+  yaml: "2.2.1"
   flutter:
     sdk: flutter
 

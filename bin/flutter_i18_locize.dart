@@ -1,3 +1,4 @@
+import 'package:flutter_i18_locize/config.dart';
 import 'package:flutter_i18_locize/flutter_i18_locize.dart';
 
 void main(List<String> args) async {
@@ -6,12 +7,17 @@ void main(List<String> args) async {
     return;
   }
 
+  var config = Config();
+  await config.loadConfig();
+
+  var locize = FlutterI18Locize(config);
+
   if (args[0] == 'fetch') {
-    await FlutterI18Locize().fetch();
+    await locize.fetch();
   }
 
   if (args[0] == 'upload') {
-    await FlutterI18Locize().upload();
+    await locize.upload();
   }
 
   print("Done!");
