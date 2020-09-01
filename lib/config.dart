@@ -15,12 +15,19 @@ class Config {
     var config = loadYaml(yamlConfig);
 
     path = config["assetsPath"] ?? './assets/flutter_i18n';
-    projectId = config["project"]["id"];
-    apiKey = config["project"]["apiKey"];
+
+    var projectConfig = config["project"];
+
+    if (projectConfig == null) {
+      throw new Exception("Project config not found.");
+    }
+
+    projectId = projectConfig["id"];
+    apiKey = projectConfig["apiKey"];
     languages =
-        (config["project"]["languages"] as YamlList).toList().cast<String>();
+        (projectConfig["languages"] as YamlList).toList().cast<String>();
     namespaces =
-        (config["project"]["namespaces"] as YamlList).toList().cast<String>();
+        (projectConfig["namespaces"] as YamlList).toList().cast<String>();
     version = config["project"]["version"] ?? "latest";
   }
 }
