@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:flutter_i18_locize/config.dart';
+import 'package:flutter_i18n_locize/config.dart';
 
 BaseOptions _options = new BaseOptions(
   baseUrl: 'https://api.locize.app',

@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:flutter_i18_locize/flutter_i18_locize.dart';
+import 'package:flutter_i18n_locize/flutter_i18n_locize.dart';
 
 void main() {
   test('adds one to input values', () {

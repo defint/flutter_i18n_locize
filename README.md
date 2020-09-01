@@ -1,4 +1,4 @@
-# flutter_i18_locize
+# flutter_i18n_locize
 
 A new Flutter package project.
 
