@@ -2,12 +2,26 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:flutter_i18n_locize/flutter_i18n_locize.dart';
 
+import 'package:flutter_i18n_locize/config.dart';
+
 void main() {
-  test('adds one to input values', () {
-    // final calculator = Calculator();
-    // expect(calculator.addOne(2), 3);
-    // expect(calculator.addOne(-7), -6);
-    // expect(calculator.addOne(0), 1);
-    // expect(() => calculator.addOne(null), throwsNoSuchMethodError);
+  test('invokes "fetch" without crash', () async {
+    var config = Config();
+    config.languages = ["en"];
+    config.namespaces = [];
+    config.path = "./test/assets";
+
+    final flutterI18Locize = FlutterI18Locize(config);
+    await flutterI18Locize.fetch();
+  });
+
+  test('invokes "upload" without crash', () async {
+    var config = Config();
+    config.languages = ["en"];
+    config.namespaces = [];
+    config.path = "./test/assets";
+
+    final flutterI18Locize = FlutterI18Locize(config);
+    await flutterI18Locize.fetch();
   });
 }

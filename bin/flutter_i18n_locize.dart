@@ -12,12 +12,16 @@ void main(List<String> args) async {
 
   var locize = FlutterI18Locize(config);
 
-  if (args[0] == 'fetch') {
-    await locize.fetch();
-  }
-
-  if (args[0] == 'upload') {
-    await locize.upload();
+  switch (args[0]) {
+    case 'fetch':
+      await locize.fetch();
+      break;
+    case 'upload':
+      await locize.upload();
+      break;
+    default:
+      print("You have to pass 'fetch' or 'upload' argument");
+      return;
   }
 
   print("Done!");
