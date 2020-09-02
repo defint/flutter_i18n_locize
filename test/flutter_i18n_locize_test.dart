@@ -9,7 +9,7 @@ void main() {
     var config = Config();
     config.languages = ["en", "uk"];
     config.namespaces = [];
-    config.path = "./test/assets";
+    config.path = "./assets";
 
     final flutterI18Locize = FlutterI18Locize(config);
     await flutterI18Locize.fetch();
@@ -17,11 +17,11 @@ void main() {
 
   test('invokes "upload" without crash', () async {
     var config = Config();
-    config.languages = ["en"];
+    config.languages = ["en", "uk"];
     config.namespaces = [];
-    config.path = "./test/assets";
+    config.path = "./assets";
 
     final flutterI18Locize = FlutterI18Locize(config);
-    await flutterI18Locize.fetch();
+    await flutterI18Locize.upload();
   });
 }
