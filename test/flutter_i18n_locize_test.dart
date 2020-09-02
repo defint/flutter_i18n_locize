@@ -7,7 +7,7 @@ import 'package:flutter_i18n_locize/config.dart';
 void main() {
   test('invokes "fetch" without crash', () async {
     var config = Config();
-    config.languages = ["en"];
+    config.languages = ["en", "uk"];
     config.namespaces = [];
     config.path = "./test/assets";
 
