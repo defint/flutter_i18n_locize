@@ -1,7 +1,6 @@
 name: flutter_i18n_locize
 description: Easy integration locize.io to flutter_i18n
 version: 0.0.1
-author: "Anton Matrenin"
 homepage: "https://github.com/defint/flutter_i18n_locize"
 
 environment:
