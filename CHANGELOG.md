@@ -1,3 +1,7 @@
+## [0.0.3] - 03 Sep 2020
+
+* Bugfixing
+
 ## [0.0.2] - 03 Sep 2020
 
 * Add documentation

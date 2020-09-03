@@ -53,7 +53,7 @@ class FlutterI18Locize {
 
   _loadFromFile(String lang) async {
     String resourceString =
-        await File("${config.path}}/$lang.json").readAsString();
+        await File("${config.path}/$lang.json").readAsString();
     JsonDecoder decoder = new JsonDecoder();
     return decoder.convert(resourceString);
   }
