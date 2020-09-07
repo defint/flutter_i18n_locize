@@ -10,6 +10,7 @@ environment:
 dependencies:
   dio: "^3.0.0"
   yaml: "^2.2.1"
+  flutter_i18n: "^0.19.1"
   flutter:
     sdk: flutter
 

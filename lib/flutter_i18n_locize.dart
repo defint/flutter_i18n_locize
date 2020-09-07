@@ -4,6 +4,8 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:flutter_i18n/loaders/decoders/json_decode_strategy.dart';
+import 'package:flutter_i18n/loaders/network_file_translation_loader.dart';
 import 'package:flutter_i18n_locize/config.dart';
 
 BaseOptions _options = new BaseOptions(
@@ -83,5 +85,23 @@ class FlutterI18Locize {
     var resourceResponse = await dio
         .get('/${config.projectId}/${config.version}/$lang/$namespace');
     return resourceResponse.data;
+  }
+}
+
+class LocizeTranslationLoader extends NetworkFileTranslationLoader {
+  LocizeTranslationLoader({
+    forcedLocale,
+    fallbackFile = "en",
+    useCountryCode = false,
+  }) : super(
+          fallbackFile: fallbackFile,
+          useCountryCode: useCountryCode,
+          forcedLocale: forcedLocale,
+          baseUri: Uri.https("api.locize.io", "get"),
+          decodeStrategies: [JsonDecodeStrategy()],
+        );
+
+  Future<String> loadString(final String fileName, final String extension) {
+    return networkAssetBundle.loadString("3f3dc751-3bf1-4563-82ca-f3b7091c2a93/latest/ru/mobile");
   }
 }
