@@ -1,4 +1,4 @@
-## [0.4.0] - 11 Jul 2021
+## [1.0.0] - 11 Jul 2021
 
 * Move to null-safety
 
