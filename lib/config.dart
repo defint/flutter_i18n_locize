@@ -3,12 +3,12 @@ import 'dart:io';
 import 'package:yaml/yaml.dart';
 
 class Config {
-  String projectId;
-  String apiKey;
-  List<String> namespaces;
-  String version;
-  String path;
-  List<String> languages;
+  late String projectId;
+  late String apiKey;
+  late List<String> namespaces;
+  late String version;
+  late String path;
+  late List<String> languages;
 
   Future<void> loadConfig() async {
     String yamlConfig = await File("./.locize.yaml").readAsString();

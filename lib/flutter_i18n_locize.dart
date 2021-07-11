@@ -69,7 +69,7 @@ class FlutterI18Locize {
           options:
               Options(headers: {"Authorization": "Bearer ${config.apiKey}"}));
     } on DioError catch (e) {
-      if (e.response.statusCode == 412) {
+      if (e.response?.statusCode == 412) {
         // Ignore, because nothing to update
       } else {
         throw e;

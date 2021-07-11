@@ -9,7 +9,7 @@ void main() {
     var config = Config();
     config.languages = ["en", "uk"];
     config.namespaces = [];
-    config.path = "./assets";
+    config.path = "./test/assets";
 
     final flutterI18Locize = FlutterI18Locize(config);
     await flutterI18Locize.fetch();
@@ -19,7 +19,7 @@ void main() {
     var config = Config();
     config.languages = ["en", "uk"];
     config.namespaces = [];
-    config.path = "./assets";
+    config.path = "./test/assets";
 
     final flutterI18Locize = FlutterI18Locize(config);
     await flutterI18Locize.upload();
