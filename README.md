@@ -61,5 +61,5 @@ Check that translations has been uploaded to locize.io.
 
 | Command | Description |
 |---------|-------------|
-| `fetch` | Downloads translations from the locize.io to your asset folder. |
-| `upload` | Uploads translations to the locize.io from your asset folder. |
+| `fetch` | Downloads translations from the locize.io to your assets folder. |
+| `upload` | Uploads translations to the locize.io from your assets folder. |
