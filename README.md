@@ -21,6 +21,8 @@ project:
     - "en"
     - "ru"
   version: "latest"
+  #isPrivate: true # in case your project is private you need also API key
+  #apiKey: "..."  # change your API key
 ```
 
 Open your terminal and run next command:
