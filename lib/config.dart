@@ -9,6 +9,7 @@ class Config {
   late String version;
   late String path;
   late List<String> languages;
+  late bool isPrivate;
 
   Future<void> loadConfig() async {
     String yamlConfig = await File("./.locize.yaml").readAsString();
@@ -22,6 +23,7 @@ class Config {
       throw new Exception("Project config not found.");
     }
 
+    isPrivate = projectConfig["isPrivate"] ?? false;
     projectId = projectConfig["id"];
     apiKey = projectConfig["apiKey"];
     languages =

@@ -17,12 +17,15 @@ BaseOptions _options = new BaseOptions(
 class FlutterI18Locize {
   final Config config;
 
-  FlutterI18Locize(this.config);
+  FlutterI18Locize(this.config) {
+    if (config.isPrivate) {
+      _options.headers["Authorization"] = "Bearer ${config.apiKey}";
+    }
+  }
 
   Future<void> fetch() async {
     for (String lang in config.languages) {
       print("Fetching translations for \"$lang\" language:");
-
       var content = {};
 
       for (String namespace in config.namespaces) {
@@ -80,8 +83,9 @@ class FlutterI18Locize {
   _getResourceByLang(String lang, String namespace) async {
     print("...namespace: \"$namespace\"");
     var dio = new Dio(_options);
-    var resourceResponse = await dio
-        .get('/${config.projectId}/${config.version}/$lang/$namespace');
+    var resourceResponse = await dio.get((config.isPrivate ? '/private' : '') +
+        '/${config.projectId}/${config.version}/$lang/$namespace');
+
     return resourceResponse.data;
   }
 }
